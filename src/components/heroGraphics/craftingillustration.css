@@ -1,0 +1,236 @@
+.ci-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.ci-react-icon {
+  width: 55%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.ci-orbit-path-static {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: none;
+  border-radius: 50%;
+}
+
+.ti-orbit-item {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
+  margin-left: -13px;
+  z-index: 10;
+}
+.img-node {
+  width: 36px;
+  height: 36px;
+  margin-top: -16px;
+  margin-left: -16px;
+  background-color: #111a3a;
+  border: 1.5px solid #ffffff;
+  overflow: hidden;
+  z-index: 99;
+}
+.node-vector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.sub-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -4px;
+  margin-left: -4px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+
+.inner-dot {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  display: block;
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -6px;
+  margin-left: -6px;
+  background-color: rgba(30, 64, 175, 0.7);
+  border: 1px solid rgb(215, 49, 140);
+  border-radius: 50%;
+  z-index: 12;
+}
+
+.moving-node {
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.mn-1 { animation-name: moveImg1; }
+.mn-2 { animation-name: moveImg2; }
+.mn-3 { animation-name: moveImg3; }
+.mn-4 { animation-name: moveImg4; }
+
+/* Desktop Translate Value (UNTOUCHED) */
+.item-1 { transform: rotate(0deg) translate(150px); }
+.s1-1 { transform: rotate(15.5deg) translate(150px); }
+.c1 { transform: rotate(22.5deg) translate(150px); }
+.s1-2 { transform: rotate(29.5deg) translate(150px); }
+.item-2 { transform: rotate(45deg) translate(150px); }
+.s2-1 { transform: rotate(60.5deg) translate(150px); }
+.c2 { transform: rotate(67.5deg) translate(150px); }
+.s2-2 { transform: rotate(74.5deg) translate(150px); }
+.item-3 { transform: rotate(90deg) translate(150px); }
+.s3-1 { transform: rotate(105.5deg) translate(150px); }
+.c3 { transform: rotate(112.5deg) translate(150px); }
+.s3-2 { transform: rotate(119.5deg) translate(150px); }
+.item-4 { transform: rotate(135deg) translate(150px); }
+.s4-1 { transform: rotate(150.5deg) translate(150px); }
+.c4 { transform: rotate(157.5deg) translate(150px); }
+.s4-2 { transform: rotate(164.5deg) translate(150px); }
+.item-5 { transform: rotate(180deg) translate(150px); }
+.s5-1 { transform: rotate(195.5deg) translate(150px); }
+.c5 { transform: rotate(202.5deg) translate(150px); }
+.s5-2 { transform: rotate(209.5deg) translate(150px); }
+.item-6 { transform: rotate(225deg) translate(150px); }
+.s6-1 { transform: rotate(240.5deg) translate(150px); }
+.c6 { transform: rotate(247.5deg) translate(150px); }
+.s6-2 { transform: rotate(254.5deg) translate(150px); }
+.item-7 { transform: rotate(270deg) translate(150px); }
+.s7-1 { transform: rotate(285.5deg) translate(150px); }
+.c7 { transform: rotate(292.5deg) translate(150px); }
+.s7-2 { transform: rotate(299.5deg) translate(150px); }
+.item-8 { transform: rotate(315deg) translate(150px); }
+.s8-1 { transform: rotate(330.5deg) translate(150px); }
+.c8 { transform: rotate(337.5deg) translate(150px); }
+.s8-2 { transform: rotate(344.5deg) translate(150px); }
+
+/* Mobile Keyframes with scaled Translate (UNTOUCHED Desktop) */
+@keyframes moveImg1_mob { 0% { transform: rotate(0deg) translate(70px) rotate(0deg); } 100% { transform: rotate(360deg) translate(70px) rotate(-360deg); } }
+@keyframes moveImg2_mob { 0% { transform: rotate(90deg) translate(70px) rotate(-90deg); } 100% { transform: rotate(450deg) translate(70px) rotate(-450deg); } }
+@keyframes moveImg3_mob { 0% { transform: rotate(180deg) translate(70px) rotate(-180deg); } 100% { transform: rotate(540deg) translate(70px) rotate(-540deg); } }
+@keyframes moveImg4_mob { 0% { transform: rotate(270deg) translate(70px) rotate(-270deg); } 100% { transform: rotate(630deg) translate(70px) rotate(-630deg); } }
+
+
+@keyframes moveImg1 { 0% { transform: rotate(0deg) translate(150px) rotate(0deg); } 100% { transform: rotate(360deg) translate(150px) rotate(-360deg); } }
+@keyframes moveImg2 { 0% { transform: rotate(90deg) translate(150px) rotate(-90deg); } 100% { transform: rotate(450deg) translate(150px) rotate(-450deg); } }
+@keyframes moveImg3 { 0% { transform: rotate(180deg) translate(150px) rotate(-180deg); } 100% { transform: rotate(540deg) translate(150px) rotate(-540deg); } }
+@keyframes moveImg4 { 0% { transform: rotate(270deg) translate(150px) rotate(-270deg); } 100% { transform: rotate(630deg) translate(150px) rotate(-630deg); } }
+
+@media (max-width: 768px) {
+  .ci-container {
+    padding: 0;
+    max-width: 270px;
+    height: 220px;
+    margin-inline: auto;
+  }
+
+  .ci-react-icon {
+    width: 36%;
+    transform: translateY(0px); 
+  }
+
+  .ci-orbit-path-static {
+    width: 32%;
+    height: 32%;
+  }
+
+  .ti-orbit-item {
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    margin-left: -7px;
+  }
+
+  .img-node {
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    margin-left: -11px;
+  }
+
+  .sub-orbit {
+    width: 4px;
+    height: 4px;
+    margin-top: -2.5px;
+    margin-left: -2.5px;
+  }
+
+  .inner-dot {
+    width: 2px;
+    height: 2px;
+  }
+
+  .center-dot {
+    width: 5px;
+    height: 5px;
+    margin-top: -3.5px;
+    margin-left: -3.5px;
+  }
+
+  .item-1 { transform: rotate(0deg) translate(70px); }
+  .s1-1 { transform: rotate(15.5deg) translate(70px); }
+  .c1 { transform: rotate(22.5deg) translate(70px); }
+  .s1-2 { transform: rotate(29.5deg) translate(70px); }
+  .item-2 { transform: rotate(45deg) translate(70px); }
+  .s2-1 { transform: rotate(60.5deg) translate(70px); }
+  .c2 { transform: rotate(67.5deg) translate(70px); }
+  .s2-2 { transform: rotate(74.5deg) translate(70px); }
+  .item-3 { transform: rotate(90deg) translate(70px); }
+  .s3-1 { transform: rotate(105.5deg) translate(70px); }
+  .c3 { transform: rotate(112.5deg) translate(70px); }
+  .s3-2 { transform: rotate(119.5deg) translate(70px); }
+  .item-4 { transform: rotate(135deg) translate(70px); }
+  .s4-1 { transform: rotate(150.5deg) translate(70px); }
+  .c4 { transform: rotate(157.5deg) translate(70px); }
+  .s4-2 { transform: rotate(164.5deg) translate(70px); }
+  .item-5 { transform: rotate(180deg) translate(70px); }
+  .s5-1 { transform: rotate(195.5deg) translate(70px); }
+  .c5 { transform: rotate(202.5deg) translate(70px); }
+  .s5-2 { transform: rotate(209.5deg) translate(70px); }
+  .item-6 { transform: rotate(225deg) translate(70px); }
+  .s6-1 { transform: rotate(240.5deg) translate(70px); }
+  .c6 { transform: rotate(247.5deg) translate(70px); }
+  .s6-2 { transform: rotate(254.5deg) translate(70px); }
+  .item-7 { transform: rotate(270deg) translate(70px); }
+  .s7-1 { transform: rotate(285.5deg) translate(70px); }
+  .c7 { transform: rotate(292.5deg) translate(70px); }
+  .s7-2 { transform: rotate(299.5deg) translate(70px); }
+  .item-8 { transform: rotate(315deg) translate(70px); }
+  .s8-1 { transform: rotate(330.5deg) translate(70px); }
+  .c8 { transform: rotate(337.5deg) translate(70px); }
+  .s8-2 { transform: rotate(344.5deg) translate(70px); }
+
+  .mn-1 { animation-name: moveImg1_mob; }
+  .mn-2 { animation-name: moveImg2_mob; }
+  .mn-3 { animation-name: moveImg3_mob; }
+  .mn-4 { animation-name: moveImg4_mob; }
+}

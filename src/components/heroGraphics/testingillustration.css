@@ -1,0 +1,200 @@
+.testing-graphics {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+.ti-laptop-box {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  width: 90%;
+  height: 90%;
+}
+.ti-screen-panel {
+  position: absolute;
+  top: 4%;
+  right: 13%;
+  width: 52%;
+  z-index: 1;
+  display: block;
+  height: 70%;
+  object-fit: contain;
+}
+.ti-screen-text1 {
+  position: absolute;
+  top: 11%;
+  left: 38%;
+  width: 43%;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
+.ti-browser-frame {
+  position: absolute;
+  top: 4.5%;
+  left: 23%;
+  width: 28%;
+  z-index: 4;
+  display: block;
+  pointer-events: none;
+}
+.ti-screen-text {
+  position: absolute;
+  top: 6%;
+  left: 17%;
+  width: 28%;
+  z-index: 5;
+  display: block;
+  pointer-events: none;
+}
+.ti-laptop-target {
+  position: absolute;
+  top: 17%;
+  left: 46%;
+  width: 28%;
+  z-index: 6;
+  display: block;
+  pointer-events: none;
+  animation: spinAlternating 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes spinAlternating {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.ti-base-plate {
+  position: absolute;
+  bottom: 8%;
+  left: 3%;
+  width: 85%;
+  z-index: 8;
+  display: block;
+}
+.ti-keyboard-plate {
+  position: absolute;
+  bottom: 24%;
+  left: 22%;
+  width: 48%;
+  z-index: 9;
+  display: block;
+}
+.ti-laptop-person {
+  position: absolute;
+  bottom: 24%;
+  left: 8%;
+  width: 18%;
+  z-index: 10;
+  display: block;
+  pointer-events: none;
+}
+.ti-laptop-bugs {
+  position: absolute;
+  top: 46%;
+  left: 73%;
+  width: 25%;
+  z-index: 11;
+  display: block;
+  pointer-events: none;
+  animation: bugFloat 4s ease-in-out infinite;
+}
+
+@keyframes bugFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.ti-percentage-frame {
+  position: absolute;
+  top: 45%;
+  left: 83%;
+  width: 6%;
+  z-index: 12;
+  display: block;
+  pointer-events: none;
+}
+.ti-frame-code {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 28%;
+  z-index: 13;
+  display: block;
+  pointer-events: none;
+}
+.ti-frame-check {
+  position: absolute;
+  top: 20%;
+  left: 75%;
+  width: 18%;
+  z-index: 14;
+  display: block;
+  pointer-events: none;
+}
+.ti-frame-staric {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 15%;
+  z-index: 15;
+  display: block;
+  pointer-events: none;
+}
+.ti-frame-code1 {
+  position: absolute;
+  top: 9%;
+  left: 4%;
+  width: 12%;
+  z-index: 16;
+  display: block;
+  pointer-events: none;
+}
+.ti-laptop-person1 {
+  position: absolute;
+  top: 65%;
+  left: 85%;
+  width: 10%;
+  z-index: 17;
+  display: block;
+  pointer-events: none;
+}
+
+.ti-magnify-set {
+  position: absolute;
+  top: 36%;
+  left: 34%;
+  width: 28%;
+  z-index: 18;
+  display: block;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .testing-graphics {
+    width: 100%;
+    max-width: 270px; 
+    height: 270px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .ti-laptop-box {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .testing-graphics {
+    max-width: 230px;
+    height: 230px;
+  }
+}

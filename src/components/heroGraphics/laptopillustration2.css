@@ -1,0 +1,215 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    perspective: 1200px;
+    align-items: center;
+    transform-origin: center center;
+    margin-top: 130px;
+}
+
+.animation-container {
+    transform: translateY(30px);
+}
+
+.scene {
+    width: 350px;
+    height: 350px;
+    perspective: 1500px;
+    z-index: 10;
+}
+
+.floating-shapes-layer {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.9;
+    animation: floatGeometric 6s ease-in-out infinite alternate;
+}
+
+
+.pos1 { top: 8%; left: -10%; width: 9%; animation-duration: 5s; filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6)); }
+.pos2 { top: 45%; right: 5%; width: 8%; animation-duration: 7s; animation-delay: -2s; filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6)); }
+.pos3 { top: 5%; left: 4%; width: 15%; animation-duration: 4s; animation-delay: -1s; }
+.pos4 { top: 40%; right: 10%; width: 16%; animation-duration: 5.5s; }
+.pos5 { top: 50%; right: 20%; width: 15%; animation-duration: 6.5s; }
+.pos6 { top: 50%; left: 20%; width: 4%; animation-duration: 3s; }
+.pos7 { bottom: 30%; left: 50%; width: 5%; animation-duration: 4.5s; filter: hue-rotate(180deg); }
+.pos8 { top: 15%; right: -8%; width: 14%; animation-duration: 5s; }
+.pos9 { bottom: 60%; left: -16%; width: 9%; animation-duration: 5.5s; animation-delay: -1.5s; filter: drop-shadow(0 0 12px rgba(255, 100, 0, 0.6)); }
+
+
+.extra-top-red-far { top: -38%; left: 20%; animation: floatHorizontal 6s ease-in-out infinite alternate; }
+.extra-top-zink-ring { top: -35%; left: 35%; animation: floatHorizontal 6s ease-in-out infinite alternate; animation-delay: -1s; }
+.extra-top-blue { top: -36%; left: 55%; animation: floatHorizontal 6s ease-in-out infinite alternate; animation-delay: -2s; }
+.extra-top-red { top: -38%; left: 65%; animation: floatHorizontal 6s ease-in-out infinite alternate; animation-delay: -1.5s; }
+
+@keyframes floatHorizontal { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-4px) rotate(10deg); } }
+
+.extra-left-blue { top: 8%; left: -15%; animation-duration: 4.2s; }
+.extra-left-red { top: 25%; left: -22%; animation-duration: 5s; }
+.extra-left-orange-tiny { top: 18%; left: -28%; filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.7)); animation-duration: 4.8s; }
+.extra-right-orange-dot { top: 61%; right: 15%; filter: drop-shadow(0 0 8px rgba(255, 122, 61, 0.7)); animation-duration: 6s; }
+
+@keyframes floatGeometric { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-20px) rotate(15deg); } }
+
+.laptop {
+    position: relative;
+    width: 75%;
+    height: 75%;
+    transform-style: preserve-3d;
+}
+
+
+.base { position: absolute; width: 93%; height: 92%; }
+.lid { position: absolute; width: 100%; height: 100%; animation: open-screen 3s ease forwards; z-index: 10; }
+.glow { animation: glowPulse 2s ease-in-out infinite alternate; }
+
+@keyframes glowPulse { from { opacity: 0.6; } to { opacity: 1; } }
+
+
+.img { position: absolute; width: 100%; height: auto; top: 53%; left: 51%; transform: translate(-50%, -50%); }
+.img1 { position: absolute; width: 100%; height: auto; top: 45.5%; left: 51%; transform: translate(-50%, -50%); }
+.img2 { position: absolute; width: 100%; height: auto; top: 41%; left: 51%; transform: translate(-50%, -50%); }
+.img3 { position: absolute; width: 65%; height: auto; top: 38%; left: 53%; transform: translate(-50%, -50%); mix-blend-mode: soft-light; opacity: 0.7; }
+
+.imgLidBack { 
+    position: absolute; 
+    width: 67.5%; 
+    height: 90.5%; 
+    top: -64.5%; 
+    left: 73.5%; 
+    z-index: 1; 
+    transform: translate(-55%, 25%); 
+}
+.imgLidUpperBack { display: none; }
+.imgLidScreen { 
+    position: absolute; 
+    width: 67.5%; 
+    height: 90.5%; 
+    top: -64.5%; 
+    left: 73.5%; 
+    z-index: 2; 
+    transform: translate(-55%, 25%); 
+    filter: none; 
+}
+.imgLidText { 
+    position: absolute; 
+    width: 39%; 
+    height: auto; 
+    top: -42.5%; 
+    left: 73.5%; 
+    z-index: 15; 
+    transform: translate(-55%, 25%); 
+    opacity: 0; 
+    animation: showScreenText 0.4s ease forwards; 
+    animation-delay: 0.8s; 
+    pointer-events: none; 
+}
+.shadow { position: absolute; width: 100%; height: auto; top: 53%; left: 51%; transform: translate(-50%, -50%); opacity: 0.3; animation: shadow-grow 3s ease-out forwards; }
+
+@keyframes open-screen {
+    0% { transform: rotateY(50deg) rotateX(50deg) scaleX(1) scaleY(1) translateY(20px) translateX(25px); opacity: 0.2; }
+    100% { transform: rotateY(0deg) rotateX(0deg) scaleX(1) scaleY(1) translateY(5px) translateX(0px); opacity: 1; }
+}
+
+@keyframes showScreenText { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes shadow-grow { 0% { transform: scale(0.8); opacity: 0.2; } 100% { transform: scale(1); opacity: 0.6; } }
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 220px !important;
+    margin: 40px auto !important;
+    transform: scale(0.68) !important;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animation-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20px) !important; 
+  }
+
+  .scene {
+    width: 250px !important;
+    height: 250px !important;
+    position: relative;
+    z-index: 10;
+  }
+
+  .laptop {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .pos1 { 
+    top: -12% !important; 
+    left: 42% !important; 
+    width: 6% !important; 
+  }
+
+  /* 2. Top Right Red/Orange Dot (Upar screen ke right taraf) */
+  .pos4 { 
+    top: -9% !important; 
+    right: 22% !important; 
+    width: 7% !important; 
+  }
+
+  /* 3. Far Left Red Dot (Bahar left pe khulla) */
+  .pos9 { 
+    display: block !important;
+    top: 25% !important; 
+    left: -12% !important; 
+    width: 7% !important; 
+  }
+
+  /* 4. Left Orange Glowing Circle (Keyboard base ke left) */
+  .pos3 { 
+    top: 48% !important; 
+    left: -18% !important; 
+    width: 12% !important; 
+  }
+
+  /* 5. Right Orange Solid Circle (Base ke bottom-right edge pe) */
+  .pos2 { 
+    top: 72% !important; 
+    right: -5% !important; 
+    width: 11% !important; 
+  }
+
+  /* 6. Far Right Red Cross / Small Shape */
+  .pos8 { 
+    top: 52% !important; 
+    right: -14% !important; 
+    width: 6% !important; 
+  }
+
+  /* Unneeded extra stacked floating items hidden */
+  .pos5, .pos6, .pos7,
+  .extra-top-red-far, .extra-top-zink-ring, 
+  .extra-top-blue, .extra-top-red,
+  .extra-left-blue, .extra-left-red, .extra-left-orange-tiny {
+    display: none !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .wrapper {
+    max-width: 260px !important;
+    height: 190px !important;
+    transform: scale(0.60) !important;
+  }
+}

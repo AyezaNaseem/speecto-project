@@ -1,0 +1,730 @@
+.phase5_scope.phase_container {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.phase5_scope .phase5_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding-top: 60px;
+    margin-bottom: 20px;
+}
+
+.phase5_scope .phase5_header_line {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(34, 197, 94, 0.1) 0%, #22c55e 100%);
+}
+
+.phase5_scope .phase5_badge {
+    background-color: #22c55e; 
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 2;
+    margin:0 auto;
+    margin-bottom: 20px;
+}
+
+.phase5_scope .phase5_title {
+    color: #22c55e; 
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.phase5_scope .phase5_subtitle {
+    max-width: 800px;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.phase5_scope .phase5_content_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.phase5_scope .phase5_graphic_side {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px; 
+    z-index: 10;
+    width: 100%;
+}
+
+.testing_canvas {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    aspect-ratio: 750 / 416;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+/* 1. Background Wireframe Mockup Cards */
+.testing_bg_cards {
+    position: absolute;
+    top: 0;
+    left: 8%;
+    width: 84%;
+    height: 98%;
+    z-index: 1;
+    display: flex;
+    gap: 16px;
+    pointer-events: none;
+}
+
+.testing_bg_card {
+    flex: 1;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* 2. Floating Animated Assets (Behind testingMan) */
+.testing_bg_assets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.test_plane {
+    position: absolute;
+    /* Starting corner (Desktop relative to left card) */
+    left: 8%;
+    top: 8%;
+    width: 10%;
+    height: auto;
+}
+
+.test_float_plane {
+    /* ease-in-out movement ko smooth rakhega, alternate infinite back and forth move karega */
+    animation: straightPlaneMovement 2s ease-in-out infinite alternate;
+}
+
+.test_pana1 {
+    position: absolute;
+    left: 35%;
+    top: 16%;
+    width: 14%;
+    height: auto;
+}
+
+.test_float_pana1 {
+    animation: floatPana1 2s ease-in-out infinite alternate;
+}
+
+.test_pana2 {
+    position: absolute;
+    left: 22%;
+    top: 10%;
+    width: 12%;
+    height: auto;
+}
+
+.test_float_pana2 {
+    animation: floatPana2 2s ease-in-out infinite alternate;
+}
+
+.test_gear1 {
+    position: absolute;
+    right: 30%;
+    top: 14%;
+    width: 15%;
+    height: auto;
+    animation: spinGear 4s linear infinite, floatGear1 1s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+.test_gear2 {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+    width: 10%;
+    height: auto;
+    animation: spinGearRev 4s linear infinite, floatGear2 1s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+.test_gear3 {
+    position: absolute;
+    right: 12%;
+    top: 28%;
+    width: 10%;
+    height: auto;
+    animation: spinGear 4s linear infinite, floatGear3 1s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+.test_spin_cw {
+    transform-origin: center center;
+}
+
+.test_spin_ccw {
+    transform-origin: center center;
+}
+
+/* 3. LCD Monitor Assembly */
+.testing_monitor_assembly {
+    position: absolute;
+    left: 17%;
+    top: 20%;
+    width: 66%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* Outer Light-Green Monitor Shell */
+.testing_outer_monitor {
+    width: 100%;
+    height: 250px;
+    background: #adeab2;
+    border: none solid #bbf7d0;
+    border-radius: 18px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inner Grey Bezel Screen Display */
+.testing_inner_screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #475569;
+    border-radius: 14px;
+    background: #f0fdf4;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Screen Code Tag Icon */
+.test_screen_tag {
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    width: 10%;
+    height: auto;
+    opacity: 0.95;
+}
+
+/* Upper Code Lines */
+.test_code_group_top {
+    position: absolute;
+    left: 8%;
+    top: 32%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Lower Code Lines */
+.test_code_group_bottom {
+    position: absolute;
+    left: 22%;
+    top: 62%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.test_code_line {
+    height: 4px;
+    border-radius: 2px;
+    background: #22c55e;
+    opacity: 0.85;
+    transform-origin: left center;
+    animation: codePulseWidth 2.5s ease-in-out infinite alternate;
+}
+
+.test_code_group_top .test_code_line:nth-child(1) {
+    animation-duration: 2.4s;
+    animation-delay: 0s;
+}
+
+.test_code_group_top .test_code_line:nth-child(2) {
+    animation-duration: 2.4s;
+    animation-delay: 0.2s;
+}
+
+.test_code_group_top .test_code_line:nth-child(3) {
+    animation-duration: 2.4s;
+    animation-delay: 0s;
+}
+
+.test_code_group_bottom .test_code_line:nth-child(1) {
+    animation-duration: 2.4s;
+    animation-delay: 0s;
+}
+
+.test_code_group_bottom .test_code_line:nth-child(2) {
+    animation-duration: 2.4s;
+    animation-delay: 0s;
+}
+
+.test_code_group_bottom .test_code_line:nth-child(3) {
+    animation-duration: 2.4s;
+    animation-delay: 0s;
+}
+
+.w-80 { width: 80%; background: #22c55e; }
+.w-60 { width: 60%; background: #7b7b7b; }
+.w-90 { width: 90%; background: #22c55e;}
+.w-75 { width: 75%; background: #22c55e;}
+.w-50 { width: 50%; background: #7b7b7b;}
+.w-65 { width: 65%; background: #7b7b7b;}
+
+/* Monitor Stand Neck & Foot */
+.testing_stand_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: -2px;
+}
+
+.testing_stand_neck {
+    width: 30%;
+    height: 60px;
+    object-fit: contain;
+    margin-top: -2px;
+}
+
+.testing_stand_foot {
+    width: 38%;
+    height: 8px;
+    background: #334155;
+    border-radius: 4px;
+    margin-top: -3px;
+    
+}
+
+@keyframes straightPlaneMovement {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(0px, 120px);
+    }
+}
+
+@keyframes floatPana1 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(-6deg); }
+}
+
+@keyframes floatPana2 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(10px) rotate(6deg); }
+}
+
+@keyframes spinGear {
+    0% { rotate: 0deg; }
+    100% { rotate: 360deg; }
+}
+
+@keyframes spinGearRev {
+    0% { rotate: 0deg; }
+    100% { rotate: -360deg; }
+}
+
+@keyframes floatGear1 {
+    0% { translate: 0 0px; }
+    100% { translate: 0 -8px; }
+}
+
+@keyframes floatGear2 {
+    0% { translate: 0 0px; }
+    100% { translate: 0 8px; }
+}
+
+@keyframes floatGear3 {
+    0% { translate: 0 0px; }
+    100% { translate: 0 -6px; }
+}
+
+
+
+@keyframes codePulseWidth {
+    0% {
+        transform: scaleX(0.35);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0.65);
+        opacity: 0.75;
+    }
+}
+
+@keyframes lensPulse {
+    0% { box-shadow: 0 0 8px rgba(34, 197, 94, 0.3); transform: scale(1); }
+    100% { box-shadow: 0 0 16px rgba(34, 197, 94, 0.6); transform: scale(1.05); }
+}
+
+@keyframes magnifiedBugZoom {
+    0% { transform: scale(1.25) rotate(-3deg); }
+    100% { transform: scale(1.45) rotate(3deg); }
+}
+
+@keyframes radarPulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+.phase5_scope .phase5_timeline_side {
+    grid-column: 2;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 20px;
+    margin-left: -20px;
+}
+
+.phase5_scope .phase5_line {
+    position: absolute;
+    left: 0;                   
+    top: -40px;                
+    width: 2px;          
+    height: 672px;
+    background: linear-gradient(
+        to bottom, 
+        rgba(34, 197, 94, 0) 0%, 
+        rgba(34, 197, 94, 0.4) 12%, 
+        #22c55e 30%, 
+        #22c55e 100%
+    );
+    z-index: 1;
+}
+
+.phase5_scope .phase5_node {
+    position: relative;
+    padding-left: 40px;        
+    padding-right: 20px;
+    margin-bottom: 50px;      
+    text-align: left;          
+    box-sizing: border-box;
+}
+
+.phase5_scope .phase5_node:last-child {
+    margin-bottom: 0;
+}
+
+.phase5_scope .phase5_dot {
+    position: absolute;
+    left: -26px; 
+    top: 13px;  
+    width: 15px;
+    height: 15px;
+    background-color: #22c55e !important; 
+    border-radius: 50%;
+    border: none !important;
+    box-shadow: none !important;
+    z-index: 5;
+}
+
+.sd_node_icon_wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: #f1f5f9; 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.sd_node_icon_wrapper svg {
+    width: 20px;
+    height: 20px;
+}
+
+.phase5_scope .node_title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+}
+
+.phase5_scope .node_desc {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Ground shadow & Character exact placement */
+.testing_man_overlay {
+    position: absolute;
+    bottom: -25%;
+    left: 8%;
+    width: 82%;
+    height: 92%;
+    z-index: 6;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testing_man_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+}
+/* Screen Bugs Positioning */
+.test_bug {
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+/* Top Right Bug (pundi1) */
+.bug_top_right {
+    top: 8%;
+    right: 28%;
+    width: 25px;
+    height: auto;
+    animation: bugWiggle1 3s ease-in-out infinite alternate;
+}
+
+/* Bottom Left Bug (pundi2) */
+.bug_bottom_left {
+    bottom: 22%;
+    left: 72%;
+    width: 25px;
+    height: auto;
+    animation: bugWiggle2 3.4s ease-in-out infinite alternate;
+}
+
+/* Center Right Bug under Glass (pundi3) */
+.bug_center_right {
+    top: 80%;
+    right: 58%;
+    width: 25px;
+    height: auto;
+    animation: bugWiggle3 3.8s ease-in-out infinite alternate;
+}
+@media screen and (max-width: 900px) {
+
+    /* --- Container & Layout Adjustments --- */
+    .phase5_scope.phase_container {
+        margin-top: 10px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .phase5_scope .phase5_header {
+        padding-top: 40px;
+        margin-bottom: 15px;
+    }
+
+    .phase5_scope .phase5_header_line {
+        height: 40px;
+    }
+
+    .phase5_scope .phase5_subtitle {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .phase5_scope .phase5_content_grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* --- Graphic Side & Canvas Responsive Scaling --- */
+    .phase5_scope .phase5_graphic_side {
+        width: 100% !important;
+        position: static !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: 65px !important;
+        order: -1;
+    }
+
+    .testing_canvas {
+        width: 100% !important;
+        max-width: 380px !important;
+        aspect-ratio: 750 / 416 !important;
+        position: relative !important;
+        margin: 0 auto !important;
+    }
+
+    /* --- LCD Monitor Assembly Mobile Fixes --- */
+    .testing_monitor_assembly {
+        position: absolute !important;
+        left: 17% !important;
+        top: 15% !important;
+        width: 66% !important;
+        z-index: 3 !important;
+    }
+
+    .testing_outer_monitor {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 10 !important;
+        padding: 2.5% !important;
+        border-radius: 12px !important;
+    }
+
+    .testing_inner_screen {
+        border-width: 3px !important;
+        border-radius: 8px !important;
+    }
+
+    .testing_stand_neck {
+        width: 30% !important;
+        height: 25px !important;
+        margin-top: -1px !important;
+    }
+
+    .testing_stand_foot {
+        width: 38% !important;
+        height: 5px !important;
+    }
+
+    .testing_man_overlay {
+        position: absolute !important;
+        bottom: -20% !important;
+        left: 8% !important;
+        width: 82% !important;
+        height: 95% !important;
+        z-index: 6 !important;
+    }
+
+    /* --- Bug Icons Resizing --- */
+    .bug_top_right {
+        width: 14px !important;
+    }
+
+    .bug_bottom_left {
+        width: 14px !important;
+        bottom: 25% !important;
+        left: 70% !important;
+    }
+
+    .bug_center_right {
+        width: 14px !important;
+        top: 75% !important;
+        right: 55% !important;
+    }
+
+    /* --- Timeline Side & Text Nodes Adjustments --- */
+    .phase5_scope .phase5_timeline_side {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .phase5_scope .phase5_line,
+    .phase5_scope .phase5_dot {
+        display: none !important;
+    }
+
+    .phase5_scope .phase5_node {
+        width: 100% !important;
+        max-width: 400px !important;
+        padding: 0 !important;
+        margin-bottom: 35px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .phase5_scope .phase5_node_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .phase5_scope .sd_node_icon_wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .phase5_scope .sd_node_icon_wrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .phase5_scope .node_title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 8px 0;
+        text-align: center;
+    }
+
+    .phase5_scope .node_desc {
+        font-size: 0.92rem;
+        color: #64748b;
+        line-height: 1.6;
+        text-align: center;
+        margin: 0;
+    }
+}

@@ -1,0 +1,186 @@
+.mob-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+.mob-shadow {
+  position: absolute;
+  bottom: -4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.45;
+}
+
+.mob-main {
+  width: 75%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin-left: -4%;
+}
+
+.mob-entrance {
+  animation: mobFadeIn 0.7s ease forwards, mobFloat 5s ease-in-out infinite 0.7s;
+}
+
+@keyframes mobFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mobFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.mob-asset {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+.mob-diamond-top {
+  top: 38%;
+  right: 76%;
+  width: 18%;
+}
+.mob-diamond-wire-1 {
+  top: 50%;
+  right: 3%;
+  width: 16%;
+}
+.mob-diamond-wire-2 {
+  top: 68%;
+  right: 15%;
+  width: 22%;
+}
+.mob-lines-top {
+  top: 28%;
+  left: 38%;
+  width: 14%;
+}
+
+.mob-lines-bottom {
+  bottom: 12%;
+  right: 50%;
+  width: 13%;
+}
+.mob-float1 {
+  animation: mobDotFloat1 4.5s ease-in-out infinite;
+}
+.mob-float2 {
+  animation: mobDotFloat2 5s ease-in-out infinite 0.5s;
+}
+.mob-float3 {
+  animation: mobDotFloat3 5.5s ease-in-out infinite 1s;
+}
+
+@keyframes mobDotFloat1 {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes mobDotFloat2 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+@keyframes mobDotFloat3 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+
+  /* 1. Main Wrapper container & spacing */
+  .mob-wrapper {
+    width: 100% !important;
+    max-width: 300px !important; 
+    min-height: 240px !important; 
+    height: 240px !important;
+    margin: 0 auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+  }
+
+  /* 2. Phone Main Graphic Size */
+  .mob-main {
+    width: 76% !important;
+    height: auto !important;
+    margin-left: 0 !important; 
+    margin-inline: auto !important;
+    display: block;
+  }
+
+  .mob-shadow {
+    width: 85% !important;
+    bottom: 2% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* 3. Floating Assets closer to mobile phone */
+
+  /* Top Left Wireframe Square (Closer to phone) */
+  .mob-diamond-top {
+    width: 16% !important;
+    top: 16% !important;
+    left: 6% !important;
+    right: auto !important;
+  }
+
+  /* Right Upper Wireframe Square (Closer to phone) */
+  .mob-diamond-wire-1 {
+    width: 15% !important;
+    top: 30% !important;
+    right: 4% !important;
+  }
+
+  /* Right Bottom Wireframe Square (Closer to phone) */
+  .mob-diamond-wire-2 {
+    width: 17% !important;
+    bottom: 18% !important;
+    right: 10% !important;
+  }
+
+  /* Top Right Red Dash Lines (Closer to phone) */
+  .mob-lines-top {
+    width: 11% !important;
+    top: 10% !important;
+    right: 24% !important;
+    left: auto !important;
+  }
+
+  /* Bottom Red Dash Lines (Closer to phone) */
+  .mob-lines-bottom {
+    width: 11% !important;
+    bottom: 8% !important;
+    right: 42% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .mob-wrapper {
+    max-width: 260px !important;
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+  .mob-main {
+    width: 74% !important;
+  }
+}

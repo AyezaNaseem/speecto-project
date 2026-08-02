@@ -1,0 +1,119 @@
+.phase6_scope.phase_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.phase6_scope .phase6_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding-top: 60px;
+    margin-bottom: 15px;
+}
+
+.phase6_scope .phase6_header_line {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(20, 184, 166, 0.1) 0%, #14b8a6 100%);
+}
+
+.phase6_scope .phase6_badge {
+    background-color: #14b8a6;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 2;
+    margin-bottom: 15px;
+}
+
+.phase6_scope .phase6_title {
+    color: #14b8a6;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.phase6_scope .phase6_subtitle {
+    max-width: 900px;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.phase6_scope .phase6_illustration_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.phase6_scope .phase6_illustration {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.phase6_scope .prod-canvas {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phase6_scope .prod_main_video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .phase6_scope .phase6_header {
+        padding-top: 40px;
+    }
+
+    .phase6_scope .phase6_header_line {
+        height: 40px;
+    }
+
+    .phase6_scope .phase6_illustration {
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .phase6_scope .prod_main_video {
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    .phase6_scope .phase6_title {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .phase6_scope .phase6_subtitle {
+        font-size: 0.88rem;
+        padding: 0 10px;
+    }
+}

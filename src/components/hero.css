@@ -241,11 +241,11 @@
 }
 @media (max-width: 768px) {
     .hero {
-        padding: 75px 16px 35px;
+        padding: 65px 16px 20px;
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         box-sizing: border-box;
     }
@@ -254,13 +254,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         padding: 0;
-        gap: 12px;
+        gap: 8px;
         width: 100%;
         max-width: 420px;
         margin: 0 auto;
-        min-height: auto;
+        height: 100%;
+        min-height: calc(100vh - 85px);
+        min-height: calc(100dvh - 85px);
     }
 
     .hero_content {
@@ -274,7 +276,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 0;
+        margin-top: 15px;
         margin-bottom: 0;
         position: relative;
         z-index: 1;
@@ -298,9 +300,9 @@
     .hero_graphic_side {
         order: 2;
         width: 100%;
-        max-width: 330px;
-        height: 265px;
-        margin: 6px auto;
+        max-width: 320px;
+        height: 260px;
+        margin: 4px auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -315,12 +317,13 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 10px;
     }
 
     .hero_description {
         font-size: 0.88rem;
         line-height: 1.45;
-        margin: 0 0 12px 0;
+        margin: 0 0 16px 0;
         text-align: center;
         color: #94a3b8;
         max-width: 380px;
@@ -330,7 +333,7 @@
     .hero_actions {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         width: 100%;
         align-items: center;
     }
@@ -350,13 +353,13 @@
 
     .hero_bg-text {
         position: absolute;
-        top: 60px;
+        top: 35px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 20vw;
+        font-size: 26vw;
         font-weight: 900;
-        color: rgba(255, 255, 255, 0.07);
-        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.08);
+        letter-spacing: 3px;
         z-index: 0;
         pointer-events: none;
         user-select: none;
@@ -366,21 +369,25 @@
 
 @media (max-width: 400px) {
     .hero {
-        padding: 70px 12px 20px;
+        padding: 60px 12px 15px;
     }
     .hero_heading {
         font-size: 1.2rem;
     }
     .hero_graphic_side {
-        max-width: 300px;
+        max-width: 290px;
         height: 240px;
     }
     .hero_description {
         font-size: 0.82rem;
-        margin: 0 0 10px 0;
+        margin: 0 0 12px 0;
     }
     .hero_btn-primary {
         max-width: 260px;
         padding: 10px 16px;
+    }
+    .hero_bg-text {
+        font-size: 28vw;
+        top: 30px;
     }
 }

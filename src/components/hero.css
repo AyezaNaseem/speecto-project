@@ -241,11 +241,11 @@
 }
 @media (max-width: 768px) {
     .hero {
-        padding: 65px 16px 20px;
+        padding: 70px 16px 20px;
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         box-sizing: border-box;
     }
@@ -254,15 +254,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         padding: 0;
-        gap: 8px;
+        gap: 6px;
         width: 100%;
         max-width: 420px;
         margin: 0 auto;
-        height: 100%;
-        min-height: calc(100vh - 85px);
-        min-height: calc(100dvh - 85px);
+        min-height: auto;
     }
 
     .hero_content {
@@ -276,7 +274,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 15px;
+        margin-top: 28px;
         margin-bottom: 0;
         position: relative;
         z-index: 1;
@@ -302,7 +300,7 @@
         width: 100%;
         max-width: 320px;
         height: 260px;
-        margin: 4px auto;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -317,13 +315,14 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-top: -6px;
         margin-bottom: 10px;
     }
 
     .hero_description {
         font-size: 0.88rem;
         line-height: 1.45;
-        margin: 0 0 16px 0;
+        margin: 0 0 12px 0;
         text-align: center;
         color: #94a3b8;
         max-width: 380px;
@@ -333,7 +332,7 @@
     .hero_actions {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
         width: 100%;
         align-items: center;
     }
@@ -353,10 +352,10 @@
 
     .hero_bg-text {
         position: absolute;
-        top: 35px;
+        top: 72px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 26vw;
+        font-size: 20vw;
         font-weight: 900;
         color: rgba(255, 255, 255, 0.08);
         letter-spacing: 3px;
@@ -369,7 +368,7 @@
 
 @media (max-width: 400px) {
     .hero {
-        padding: 60px 12px 15px;
+        padding: 65px 12px 15px;
     }
     .hero_heading {
         font-size: 1.2rem;
@@ -380,14 +379,14 @@
     }
     .hero_description {
         font-size: 0.82rem;
-        margin: 0 0 12px 0;
+        margin: 0 0 10px 0;
     }
     .hero_btn-primary {
         max-width: 260px;
         padding: 10px 16px;
     }
     .hero_bg-text {
-        font-size: 28vw;
-        top: 30px;
+        font-size: 22vw;
+        top: 68px;
     }
 }

@@ -100,6 +100,34 @@
     align-items: center;
 }
 
+/* ==============================================
+   GREY CARD (FAST + DISAPPEAR / REAPPEAR)
+   ============================================== */
+.sd-top-grey-card {
+    position: absolute;
+    top: -15px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95px;
+    height: 110px;
+    background: #a8a7a7;
+    border-radius: 10px;
+    z-index: 25;
+    display: block;
+    animation: sdGreyCardFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes sdGreyCardFloat {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0; /* Gayab (Disappear) together */
+    }
+}
+
 .sd-bg-card {
     position: absolute;
     bottom: 15px;
@@ -112,17 +140,13 @@
 }
 
 @keyframes sdSyncFadeFloatBgCard {
-    0% {
-        opacity: 1;
+    0%, 100% {
         transform: translateX(-45%) translateY(0px);
+        opacity: 1; /* Fully visible */
     }
-    40%, 65% {
-        opacity: 0;
-        transform: translateX(-45%) translateY(-12px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-45%) translateY(0px);
+    50% {
+        transform: translateX(-45%) translateY(-20px);
+        opacity: 0; /* Gayab (Disappear) together */
     }
 }
 
@@ -514,6 +538,7 @@
 .sd-mid-dot-1 { top: 144px; }
 .sd-mid-dot-2 { top: 380px; }
 .sd-mid-dot-3 { top: 597px; }
+
 .sd-right-col {
     width: 50%;
     display: flex;
@@ -601,54 +626,70 @@
     flex: 1;
 }
 
+/* ==============================================
+   FAST GEAR SPIN & FADE FLOATING ANIMATIONS
+   ============================================== */
 .sd-gear-spin {
-    animation: sdGearSpin 14s linear infinite;
+    animation: sdGearSpin 2.5s linear infinite;
 }
 .sd-gear-spin-back {
-    animation: sdGearSpinBack 11s linear infinite;
+    animation: sdGearSpinBack 2.5s linear infinite;
+}
+@keyframes sdSameTimeFade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0; /* Bilkul same moment par gayab honge */
+    }
 }
 @keyframes sdGearSpin     { to { transform: rotate(360deg); } }
 @keyframes sdGearSpinBack { to { transform: rotate(-360deg); } }
 
-
-
 .sd-card-float {
-    animation: sdCardFloat 4s ease-in-out infinite;
+    animation: sdCardFloat 2.5s ease-in-out infinite;
 }
 @keyframes sdCardFloat {
-    0%, 100% { transform: translateX(-45%) translateY(0); }
-    50%       { transform: translateX(-45%) translateY(-8px); }
+    0%, 100% { 
+        transform: translateY(0);
+        opacity: 1; 
+    }
+    50% { 
+        transform: translateY(-15px);
+        opacity: 0; /* Smooth Disappear Effect */
+    }
 }
 
-.sd-wiggle  { animation: sdWiggle  4s ease-in-out infinite; }
+.sd-wiggle  { animation: sdWiggle  3s ease-in-out infinite; }
 .sd-wiggle2 { animation: sdWiggle2 3s ease-in-out infinite; }
 .sd-wiggle3 { animation: sdWiggle3 3s ease-in-out infinite; }
 
 @keyframes sdWiggle {
-    0%, 100% { transform: scale(1); }
-    50%       { transform: scale(1.08); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.08); opacity: 0; }
 }
 @keyframes sdWiggle2 {
-    0%, 100% { transform: scale(1); }
-    50%       { transform: scale(1.05); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.05); opacity: 0; }
 }
 @keyframes sdWiggle3 {
-    0%, 100% { transform: scale(1); }
-    50%       { transform: scale(1.05); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.05); opacity: 0; }
 }
 
-.sd-pulse { animation: sdPulse 2s ease-in-out infinite; }
+.sd-pulse { animation: sdPulse 1.5s ease-in-out infinite; }
 @keyframes sdPulse {
     0%, 100% { opacity: 1; }
-    50%       { opacity: 0.6; }
+    50%       { opacity: 0; }
 }
 
-.sd-bar-anim { animation: sdBarAnim 2s ease-in-out infinite alternate; }
+.sd-bar-anim { animation: sdBarAnim 1.5s ease-in-out infinite alternate; }
 @keyframes sdBarAnim {
-    from { transform: scaleY(0.7); }
-    to   { transform: scaleY(1); }
+    from { transform: scaleY(0.7); opacity: 0.3; }
+    to   { transform: scaleY(1); opacity: 1; }
 }
 
+/* Tablet Media Query */
 @media (max-width: 1024px) {
     .sd-main-content  { flex-direction: column; align-items: center; gap: 40px; }
     .sd-left-col      { width: 100%; max-width: 460px; position: static; }
@@ -658,6 +699,7 @@
     .sd-right-spacer  { display: none; }
 } 
 
+/* Mobile Media Query */
 @media (max-width: 768px) {
     .sd-page-wrapper {
         padding: 40px 15px 30px;
@@ -698,39 +740,56 @@
         margin-bottom: 30px;
         display: flex;
         justify-content: center;
+        overflow: hidden;
     }
 
     .sd-illustration-outer {
         max-width: 100%;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .sd-illustration-inner {
-        height: 250px;
-        max-width: 340px;
+        height: 280px;
+        width: 100%;
+        max-width: 320px;
         margin: 0 auto;
+        position: relative;
         overflow: visible;
+        transform: scale(0.9);
+        transform-origin: center center;
+    }
+
+    .sd-top-grey-card {
+        top: 2px;
+        left: 50%;
+        width: 65px;
+        height: 70px;
+        border-radius: 6px;
     }
 
     .sd-code-panel {
         display: block;
-        width: 75px;
-        right: -10px;
-        top: 2%;
+        width: 70px;
+        height: 70px;
+        right: -40px;
+        top: 10%;
     }
 
     .sd-bottom-panel {
         display: block;
-        width: 75px;
-        right: -30px;
-        bottom: 10px;
+        width: 70px;
+        height: 70px;
+        right: -40px;
+        bottom: -40px;
     }
 
     .sd-cloud-card {
         display: flex;
-        width: 70px;
-        left: -5%;
-        top: -25px;
+        width: 65px;
+        left: -2%;
+        top: -20px;
     }
 
     .sd-cloud-card-top, 
@@ -744,9 +803,9 @@
     }
 
     .sd-monitor-wrap {
-        left: 8%;
-        width: 84%;
-        bottom: 25%;
+        left: 5%;
+        width: 90%;
+        bottom: 22%;
     }
 
     .sd-monitor-bezel {
@@ -765,23 +824,22 @@
     }
 
     .sd-api-gear-wrap {
-        width: 100px;
-        height: 100px;
+        width: 85px;
+        height: 85px;
     }
 
     .sd-api-text {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
 
-    .sd-sg-r  { width: 24px; top: 8px; right: -6px; }
-    .sd-sg-rt { width: 16px; top: -5px; right: 8px; }
-    .sd-sg-l  { width: 24px; bottom: 8px; left: -6px; }
-    .sd-sg-lb { width: 16px; bottom: -5px; left: 8px; }
+    .sd-sg-r  { width: 20px; top: 8px; right: -4px; }
+    .sd-sg-rt { width: 14px; top: -5px; right: 6px; }
+    .sd-sg-l  { width: 20px; bottom: 8px; left: -4px; }
+    .sd-sg-lb { width: 14px; bottom: -5px; left: 6px; }
 
-    .sd-line1-wrap { width: 30px; left: -38px; top: 15px; }
-    .sd-line2-wrap { width: 50px; right: -58px; bottom: 0; }
+    .sd-line1-wrap { width: 25px; left: -25px; top: 15px; }
+    .sd-line2-wrap { width: 35px; right: -35px; bottom: 0; }
 
-  
     .sd-right-col {
         width: 100%;
         align-items: center;
@@ -804,6 +862,9 @@
     .sd-sub-nodes {
         width: 100%;
     }
+
+    .sd-bg-g1 { top: -800%; }
+    .sd-bg-g3 { top: -650%; right: -2%; }
 
     .sd-node {
         padding-left: 0;
@@ -840,41 +901,5 @@
         text-align: center;
         margin: 0;
         max-width: 340px;
-    }
-}
-.sd-top-grey-card {
-    position: absolute;
-    top: 2%;
-    left: 48%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background: #a8a7a7;
-    border-radius: 10px;
-    z-index: 1;
-    animation: sdGreyCardFloat 3.5s ease-in-out infinite;
-}
-
-@keyframes sdGreyCardFloat {
-    0% {
-        transform: translateX(-50%) translateY(0px);
-        opacity: 1;
-    }
-    40%, 65% {
-        transform: translateX(-50%) translateY(-12px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(-50%) translateY(0px);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .sd-top-grey-card {
-        top: 25px;
-        width: 65px;
-        height: 80px;
-        border-radius: 6px;
     }
 }

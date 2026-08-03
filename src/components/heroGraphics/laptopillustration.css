@@ -6,31 +6,54 @@
   margin-inline: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; 
+  /* Visual placement offset to push it further down */
+  margin-top: 75px; 
+  transform: translateY(25px); 
+}
+
+.lg-steps-bottom {
+  position: absolute;
+  bottom: -22%;
+  width: 78%;
+  height: auto;
+  z-index: 0;
+  opacity: 0.6;
 }
 
 .lg-steps {
   position: absolute;
-  bottom: 2%;
-  width: 75%;
+  bottom: -5%; 
+  width: 78%;
+  height: auto;
+  z-index: 2;
+}
+
+.lg-charts-back {
+  position: absolute;
+  top: 10%; 
+  left: 48%;
+  width: 42%;
   height: auto;
   z-index: 1;
+  opacity: 0.85;
 }
+
 .lg-charts {
   position: absolute;
-  top: 3%;
-  width: 80%;
+  top: 14%; 
+  width: 82%;
   height: auto;
-  z-index: 3;
+  z-index: 4;
   opacity: 0.85;
 }
 
 .lg-man {
   position: absolute;
-  bottom: 22%;
-  width: 24%;
+  bottom: 8%; 
+  width: 25%;
   height: auto;
-  z-index: 2;
+  z-index: 5; 
 }
 
 .lg-man--enter {
@@ -53,8 +76,13 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
 .float-medium {
   animation: lgFloatCharts 4s ease-in-out infinite;
+}
+
+.float-back {
+  animation: lgFloatChartsBack 4s ease-in-out infinite;
 }
 
 @keyframes lgFloatCharts {
@@ -66,44 +94,79 @@
   }
 }
 
+@keyframes lgFloatChartsBack {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) scale(0.98);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px) scale(1.02);
+  }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .laptop-graphic {
-    width: 100%;
-    max-width: 320px;
-    height: 240px;
-    margin-inline: auto;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 250px !important;
+    margin: 0 auto !important;
+    transform: none !important;
   }
+
+  .lg-steps-bottom {
+    width: 78%;
+    bottom: -15%;
+  }
+
   .lg-steps {
-    width: 72%;
-    bottom: 20px;
+    width: 78%;
+    bottom: -2%;
+  }
+
+  .lg-charts-back {
+    width: 35%;
+    top: 18%;
   }
 
   .lg-charts {
-    width: 75%;
-    top: 15px;
+    width: 80%;
+    top: 20%;
   }
 
   .lg-man {
-    width: 15%;
-    bottom: 55px;
+    width: 22%;
+    bottom: 12%;
   }
 }
 
 @media (max-width: 400px) {
   .laptop-graphic {
-    max-width: 270px;
-    height: 200px;
+    max-width: 260px !important;
+    height: 220px !important;
   }
+  
+  .lg-steps-bottom {
+    width: 72%;
+    bottom: -10px;
+  }
+
   .lg-steps {
     width: 72%;
     bottom: 15px;
   }
+
+  .lg-charts-back {
+    width: 25%;
+    top: 10px;
+  }
+
   .lg-charts {
     width: 82%;
     top: 10px;
   }
+
   .lg-man {
     width: 13.5%;
-    bottom: 45px;
+    bottom: 35px;
   }
 }

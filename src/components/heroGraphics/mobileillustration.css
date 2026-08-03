@@ -108,8 +108,8 @@
   .mob-wrapper {
     width: 100% !important;
     max-width: 300px !important; 
-    min-height: 240px !important; 
-    height: 240px !important;
+    min-height: 250px !important; 
+    height: 250px !important;
     margin: 0 auto !important;
     display: flex;
     align-items: center;
@@ -118,7 +118,6 @@
     position: relative;
   }
 
-  /* 2. Phone Main Graphic Size */
   .mob-main {
     width: 76% !important;
     height: auto !important;
@@ -133,40 +132,29 @@
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
-
-  /* 3. Floating Assets closer to mobile phone */
-
-  /* Top Left Wireframe Square (Closer to phone) */
-  .mob-diamond-top {
-    width: 16% !important;
-    top: 16% !important;
-    left: 6% !important;
+  .mob-diamond-wire-1 {
+    width: 14% !important;
+    top: 48% !important;       /* Bare capsule ke parallel horizontal align */
+    left: 5% !important;      /* Mobile screen ke left par shift */
     right: auto !important;
   }
-
-  /* Right Upper Wireframe Square (Closer to phone) */
-  .mob-diamond-wire-1 {
-    width: 15% !important;
-    top: 30% !important;
-    right: 4% !important;
+  .mob-lines-top {
+    width: 12% !important;
+    top: 30% !important;   /* Vertically time (12:30) ke barabar horizontal line mein */
+    left: 24% !important;  /* Time (12:30) ke barabar mein, music capsule se uper */
+    right: auto !important;
   }
-
-  /* Right Bottom Wireframe Square (Closer to phone) */
+  .mob-diamond-top {
+    width: 14% !important;
+    top: 50% !important;       /* Upper-right isometric grid match */
+    right: 7% !important;
+    left: auto !important;
+  }
   .mob-diamond-wire-2 {
     width: 17% !important;
     bottom: 18% !important;
     right: 10% !important;
   }
-
-  /* Top Right Red Dash Lines (Closer to phone) */
-  .mob-lines-top {
-    width: 11% !important;
-    top: 10% !important;
-    right: 24% !important;
-    left: auto !important;
-  }
-
-  /* Bottom Red Dash Lines (Closer to phone) */
   .mob-lines-bottom {
     width: 11% !important;
     bottom: 8% !important;
@@ -177,8 +165,8 @@
 @media (max-width: 400px) {
   .mob-wrapper {
     max-width: 260px !important;
-    height: 210px !important;
-    min-height: 210px !important;
+    height: 220px !important;
+    min-height: 220px !important;
   }
   .mob-main {
     width: 74% !important;

@@ -6,11 +6,13 @@
     perspective: 1200px;
     align-items: center;
     transform-origin: center center;
-    margin-top: 130px;
+    /* Increased top margin to push down */
+    margin-top: 185px; 
 }
 
 .animation-container {
-    transform: translateY(30px);
+    /* Lowered vertical translation */
+    transform: translateY(65px); 
 }
 
 .scene {
@@ -79,30 +81,30 @@
 
 .imgLidBack { 
     position: absolute; 
-    width: 67.5%; 
-    height: 90.5%; 
-    top: -64.5%; 
-    left: 73.5%; 
+    width: 64.5%; 
+    height: 86.5%; 
+    top: -61.5%; 
+    left: 71.8%; 
     z-index: 1; 
     transform: translate(-55%, 25%); 
 }
 .imgLidUpperBack { display: none; }
 .imgLidScreen { 
     position: absolute; 
-    width: 67.5%; 
-    height: 90.5%; 
-    top: -64.5%; 
-    left: 73.5%; 
+    width: 64.5%; 
+    height: 86.5%; 
+    top: -61.5%; 
+    left: 71.8%; 
     z-index: 2; 
     transform: translate(-55%, 25%); 
     filter: none; 
 }
 .imgLidText { 
     position: absolute; 
-    width: 39%; 
+    width: 37.5%; 
     height: auto; 
-    top: -42.5%; 
-    left: 73.5%; 
+    top: -40.5%; 
+    left: 71.8%; 
     z-index: 15; 
     transform: translate(-55%, 25%); 
     opacity: 0; 
@@ -125,9 +127,9 @@
   .wrapper {
     width: 100% !important;
     max-width: 300px !important;
-    height: 220px !important;
-    margin: 40px auto !important;
-    transform: scale(0.68) !important;
+    height: 250px !important;
+    margin: 20px auto 0 auto !important;
+    transform: scale(0.62) !important;
     transform-origin: center center;
     display: flex;
     justify-content: center;
@@ -140,7 +142,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(20px) !important; 
+    transform: translateY(0px) !important; 
   }
 
   .scene {
@@ -161,14 +163,12 @@
     width: 6% !important; 
   }
 
-  /* 2. Top Right Red/Orange Dot (Upar screen ke right taraf) */
   .pos4 { 
     top: -9% !important; 
     right: 22% !important; 
     width: 7% !important; 
   }
 
-  /* 3. Far Left Red Dot (Bahar left pe khulla) */
   .pos9 { 
     display: block !important;
     top: 25% !important; 
@@ -176,28 +176,24 @@
     width: 7% !important; 
   }
 
-  /* 4. Left Orange Glowing Circle (Keyboard base ke left) */
   .pos3 { 
     top: 48% !important; 
     left: -18% !important; 
     width: 12% !important; 
   }
 
-  /* 5. Right Orange Solid Circle (Base ke bottom-right edge pe) */
   .pos2 { 
     top: 72% !important; 
     right: -5% !important; 
     width: 11% !important; 
   }
 
-  /* 6. Far Right Red Cross / Small Shape */
   .pos8 { 
     top: 52% !important; 
     right: -14% !important; 
     width: 6% !important; 
   }
 
-  /* Unneeded extra stacked floating items hidden */
   .pos5, .pos6, .pos7,
   .extra-top-red-far, .extra-top-zink-ring, 
   .extra-top-blue, .extra-top-red,
@@ -209,7 +205,8 @@
 @media (max-width: 400px) {
   .wrapper {
     max-width: 260px !important;
-    height: 190px !important;
-    transform: scale(0.60) !important;
+    height: 220px !important;
+    margin: 0 auto !important;
+    transform: scale(0.58) !important;
   }
 }

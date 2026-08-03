@@ -107,9 +107,9 @@
   /* 1. Main Wrapper container & spacing */
   .mob-wrapper {
     width: 100% !important;
-    max-width: 300px !important; 
-    min-height: 250px !important; 
-    height: 250px !important;
+    max-width: 310px !important; 
+    min-height: 265px !important; 
+    height: 265px !important;
     margin: 0 auto !important;
     display: flex;
     align-items: center;

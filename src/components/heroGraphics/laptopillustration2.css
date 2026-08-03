@@ -126,10 +126,10 @@
 
   .wrapper {
     width: 100% !important;
-    max-width: 300px !important;
-    height: 250px !important;
-    margin: 20px auto 0 auto !important;
-    transform: scale(0.62) !important;
+    max-width: 310px !important;
+    height: 265px !important;
+    margin: 15px auto 0 auto !important;
+    transform: scale(0.64) !important;
     transform-origin: center center;
     display: flex;
     justify-content: center;

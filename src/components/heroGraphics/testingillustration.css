@@ -196,7 +196,7 @@
 @media (max-width: 768px) {
   .testing-graphics {
     width: 100% !important;
-    max-width: 270px !important; 
+    max-width: 278px !important; 
     aspect-ratio: 1 / 1 !important;
     height: auto !important;
     margin: 0 auto !important;

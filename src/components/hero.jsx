@@ -14,7 +14,7 @@ const slideData = [
         headingPart3: "WEB APPS",
         subheading: "WEB DEVELOPMENT",
         headingPart2Color: "#f97316",
-        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativity, inclusivity, and continuous learning",
+        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativit...",
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const slideData = [
         subheading: "APP DEVELOPMENT",
         headingPart2Color: "#ec4899",
         subheadingColor: "#ec4899",
-        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativity, inclusivity, and continuous learning",
+        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativit...",
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ const slideData = [
         subheading: "APP DEVELOPMENT",
         headingPart2Color: "#3b82f6",
         subheadingColor: "#3b82f6",
-        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativity, inclusivity, and continuous learning",
+        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativit...",
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ const slideData = [
         subheading: "TESTING",
         headingPart1Color: "#f97316",
         subheadingColor: "#f97316",
-        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativity, inclusivity, and continuous learning",
+        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativit...",
     },
     {
         id: 5,
@@ -53,7 +53,7 @@ const slideData = [
         subheading: "DIGITAL SOLUTIONS",
         headingPart2Color: "#3b82f6",
         subheadingColor: "#3b82f6",
-        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativity, inclusivity, and continuous learning",
+        description: "We are a team of tech enthusiasts dedicated to developing world-class custom software solutions while fostering a culture of creativit...",
     }
 ];
 

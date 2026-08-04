@@ -53,6 +53,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
 }
 .pd_text_col {
     position: relative;
@@ -141,13 +142,14 @@
 
 .pd_illustration_col {
     position: relative;
+    align-self: start;
     height: 100%; 
 }
 
 .pd_sticky_wrap {
     position: -webkit-sticky;
     position: sticky;
-    top: 100px; 
+    top: 120px; 
     width: 100%;
     z-index: 10;
 }

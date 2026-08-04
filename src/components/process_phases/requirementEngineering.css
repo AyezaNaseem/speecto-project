@@ -143,8 +143,8 @@
 
 .bg_clock_circle {
     position: absolute;
-    top: 38px;
-    left: 340px;
+    top: 35px;
+    left: 345px;
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -156,53 +156,70 @@
     align-items: center;
 }
 
+.clock_center_dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: #64748b;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+}
+
 .clock_hand_hour {
     position: absolute;
+    bottom: 50%;
+    left: 50%;
     width: 1px;
-    height: 10px;
-    background-color: grey;
-    top: 14px;
-    left: 21px;
+    height: 26%;
+    background-color: #64748b;
+    border-radius: 0.5px;
     transform-origin: bottom center;
-    transform: rotate(-35deg);
+    transform: translateX(-50%) rotate(-35deg);
+    z-index: 3;
 }
 
 .clock_hand_minute {
     position: absolute;
+    bottom: 50%;
+    left: 50%;
     width: 1px;
-    height: 16px;
-    background-color: grey;
-    top: 8px;
-    left: 21px;
+    height: 36%;
+    background-color: #64748b;
+    border-radius: 0.5px;
     transform-origin: bottom center;
-    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 4;
 }
 
 .clock_hand_second {
     position: absolute;
-    width: 1.5px;
-    height: 16px;
-    background-color: grey; 
-    top: 8px;
-    left: 21.25px;
+    bottom: 50%;
+    left: 50%;
+    width: 1px;
+    height: 38%;
+    background-color: #94a3b8; 
     transform-origin: bottom center;
-    animation: rotateSeconds 10s linear infinite; 
+    animation: rotateSeconds 10s linear infinite;
+    z-index: 5;
 }
 
 @keyframes rotateSeconds {
     from {
-        transform: rotate(0deg);
+        transform: translateX(-50%) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: translateX(-50%) rotate(360deg);
     }
 }
 
 .slate_board {
     position: absolute;
     bottom: 15px;
-    left: 125px;
-    width: 215px;
+    left: 138px;
+    width: 190px;
     height: 330px;
     background: #ffffff;
     border-top: 8px solid var(--slate-blue);
@@ -314,16 +331,16 @@
 }
 
 .chat_left {
-    top: 125px;
-    left: 10px;
-    width: 44px;
+    top: 110px;
+    left: -10px;
+    width: 36px;
     z-index: 6;
 }
 
 .chat_right {
-    top: 105px;
-    right: 60px;
-    width: 44px;
+    top: 60px;
+    right: 65px;
+    width: 36px;
     z-index: 6;
 }
 
@@ -467,82 +484,122 @@
     /* Graphic Illustration Section */
     .phase1_graphic_side {
         position: static;
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 250px !important;
+        margin: 0 auto 20px auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
     }
 
     .req_illustration_canvas {
-        position: relative;
-        width: 100%;
-        max-width: 340px;
-        height: 230px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 240px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+        transform: none !important;
     }
 
     .slate_board {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 140px;
-        height: 195px;
-        bottom: 0px;
-        z-index: 3;
-        padding: 10px 8px;
-        border-top-width: 6px;
-        border-left-width: 6px;
-        border-right-width: 6px;
-        border-bottom-width: 12px;
-        border-radius: 12px 12px 6px 6px;
+        position: absolute !important;
+        bottom: 0px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 135px !important;
+        height: 195px !important;
+        padding: 12px 8px 8px 8px !important;
+        border-top-width: 6px !important;
+        border-left-width: 6px !important;
+        border-right-width: 6px !important;
+        border-bottom-width: 12px !important;
+        border-radius: 12px 12px 6px 6px !important;
+        z-index: 3 !important;
     }
 
     .slate_clip_img {
-        top: -18px;
-        width: 55px;
+        top: -18px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 48px !important;
     }
 
     .char_standing_woman {
-        height: 200px;
-        left: 20px;
-        bottom: 0;
-        z-index: 5;
+        position: absolute !important;
+        left: 15px !important;
+        bottom: 0px !important;
+        height: 190px !important;
+        width: auto !important;
+        z-index: 5 !important;
     }
 
     .char_desk_team {
-        height: 110px;
-        right: 15px;
-        bottom: 0;
-        z-index: 4;
+        position: absolute !important;
+        right: 10px !important;
+        bottom: 0px !important;
+        height: 110px !important;
+        width: auto !important;
+        z-index: 4 !important;
     }
 
     .bg_frame_left {
-        left: 65px;
-        width: 135px;
-        height: 170px;
-        top: 20px;
-        border-radius: 8px;
+        position: absolute !important;
+        top: 25px !important;
+        left: 45px !important;
+        width: 155px !important;
+        height: 195px !important;
+        border-radius: 8px !important;
+        z-index: 0 !important;
     }
 
     .bg_frame_right {
-        right: 25px;
-        width: 60px;
-        height: 110px;
-        top: 25px;
-        border-radius: 4px;
+        position: absolute !important;
+        top: 35px !important;
+        right: 18px !important;
+        width: 68px !important;
+        height: 135px !important;
+        border-radius: 4px !important;
+        z-index: 0 !important;
     }
 
     .bg_clock_circle {
-        left: 200px;
-        top: 10px;
-        width: 26px;
-        height: 26px;
-        border-width: 2px;
+        position: absolute !important;
+        top: 18px !important;
+        left: 220px !important;
+        transform: none !important;
+        width: 30px !important;
+        height: 30px !important;
+        border-width: 2.5px !important;
+        z-index: 4 !important;
+    }
+
+    .chat_left {
+        position: absolute !important;
+        top: 80px !important;
+        left: -8px !important;
+        width: 28px !important;
+        z-index: 6 !important;
+    }
+
+    .chat_right {
+        position: absolute !important;
+        top: 75px !important;
+        right: 25px !important;
+        width: 28px !important;
+        z-index: 6 !important;
+    }
+
+    .plant_pot_img {
+        position: absolute !important;
+        left: 5px !important;
+        bottom: 0px !important;
+        width: 24px !important;
+        z-index: 1 !important;
     }
 
     /* Hide Timeline Vertical Line & Dots on Mobile (Just like Original Speecto) */
